@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Light theme colors */
-:root {
+[data-theme='light'] {
   --color-bg-website: #FFFFFF; /* Pure white */
   --color-bg-card: #F9FAFB; /* Very light gray */
   --color-bg-card-hover: #F3F4F6; /* Light gray for hover */
