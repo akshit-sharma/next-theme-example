@@ -2,26 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme colors */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-bg-website: #FFFFFF; /* Pure white */
+  --color-bg-card: #F9FAFB; /* Very light gray */
+  --color-bg-card-hover: #F3F4F6; /* Light gray for hover */
+  --color-bg-nav: #E5E8EB; /* Light gray */
+  --color-bg-aside: #EFF2F5; /* Very light gray */
+  --color-bg-content: #FFFFFF; /* Pure white */
+  --color-text-secondary: #6B7280; /* Medium gray */
+  --color-text-secondary-hover: #4B5563; /* Darker gray for hover */
+  --color-text-primary: #111827; /* Dark gray */
+  --color-text-default: #374151; /* Medium dark gray */
+  --color-active: #0070f3; /* Blue */
+  --color-icon: #111827; /* Dark gray for better visibility in light mode */
+  --color-hover-bg: #E2E8F0; /* Lighter gray for hover states */
+  --color-hover-text: #000000; /* Black for text hover */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Dark theme colors */
+[data-theme='dark'] {
+  --color-bg-website: #111827; /* No change, keep the website background as is */
+  --color-bg-card: #1E2A3A; /* Darkened the card background */
+  --color-bg-card-hover: #2B3A50; /* Adjusted hover state to be slightly lighter than the new card background */
+  --color-bg-nav: #3A4755; /* Adjusted for a unified look with the darker card */
+  --color-bg-aside: #2E3B4E; /* Coordinated with the darker card theme */
+  --color-bg-content: #111827; /* Maintains the website background color */
+  --color-text-secondary: #A5B1C2; /* Adjusted to improve readability on darker backgrounds */
+  --color-text-secondary-hover: #D1DCE5; /* Lighter for hover to enhance visibility */
+  --color-text-primary: #A6B6CC; /* Lightened for better contrast against darker elements */
+  --color-text-default: #CDD6E3; /* Optimized for readability */
+  --color-active: #4D90FE; /* Slightly adjusted to stand out on darker backgrounds */
+  --color-icon: #E3EFFF; /* Light blue for better visibility in dark mode */
+  --color-hover-bg: #2E3B4E; /* Darkened to match the new card adjustments */
+  --color-hover-text: #ffffff; /* Kept white for maximum contrast */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Protanopia & Deuteranopia Friendly Colors */
+[data-theme='protanopia'], [data-theme='deuteranopia'] {
+  --color-bg-website: #FAFAFA; /* Very light gray */
+  --color-bg-card: #E0E0E0; /* Light gray */
+  --color-bg-card-hover: #CCCCCC; /* Medium gray */
+  --color-bg-nav: #BDBDBD; /* Medium light gray */
+  --color-bg-aside: #E0E0E0; /* Light gray */
+  --color-bg-content: #FAFAFA; /* Very light gray */
+  --color-text-secondary: #757575; /* Medium gray */
+  --color-text-secondary-hover: #616161; /* Dark gray */
+  --color-text-primary: #424242; /* Darker gray */
+  --color-text-default: #9E9E9E; /* Medium gray */
+  --color-active: #4285F4; /* Bright blue */
+  --color-hover-bg: #BDBDBD; /* Medium light gray */
+  --color-hover-text: #212121; /* Almost black */
 }
+
+/* Tritanopia Friendly Colors */
+[data-theme='tritanopia'] {
+  --color-bg-website: #FFFFFF; /* Pure white */
+  --color-bg-card: #F0F0F0; /* Very light gray */
+  --color-bg-card-hover: #E0E0E0; /* Light gray */
+  --color-bg-nav: #DADADA; /* Light gray */
+  --color-bg-aside: #F0F0F0; /* Very light gray */
+  --color-bg-content: #FFFFFF; /* Pure white */
+  --color-text-secondary: #707070; /* Medium gray */
+  --color-text-secondary-hover: #5A5A5A; /* Dark gray */
+  --color-text-primary: #3C3C3C; /* Dark gray */
+  --color-text-default: #606060; /* Medium dark gray */
+  --color-active: #34A853; /* Google's green */
+  --color-hover-bg: #DADADA; /* Light gray */
+  --color-hover-text: #1A1A1A; /* Almost black */
+}
+
+/* Achromatopsia Friendly Colors */
+[data-theme='achromatopsia'] {
+  --color-bg-website: #FFFFFF; /* White for the website background */
+  --color-bg-card: #F2F2F2; /* Light gray for card backgrounds */
+  --color-bg-card-hover: #E0E0E0; /* Slightly darker gray for card hover */
+  --color-bg-nav: #CCCCCC; /* Medium gray for navigation bar */
+  --color-bg-aside: #EAEAEA; /* Very light gray for sidebars */
+  --color-bg-content: #FFFFFF; /* White for content background */
+  --color-text-secondary: #787878; /* Medium-dark gray for secondary text */
+  --color-text-secondary-hover: #5A5A5A; /* Darker gray for secondary text on hover */
+  --color-text-primary: #000000; /* Black for primary text */
+  --color-text-default: #505050; /* Medium gray for default text */
+  --color-active: #000000; /* Black for active elements, emphasizing contrast */
+  --color-hover-bg: #D1D1D1; /* Light-medium gray for hover background */
+  --color-hover-text: #000000; /* Black for text color on hover, for contrast */
+}
+
