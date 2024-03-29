@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from 'next-themes'
+import dynamic from 'next/dynamic'
+const Providers = dynamic(() => import('./Providers'));
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,10 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white dark:bg-black min-h-dvh">
-        <ThemeProvider attribute="data-theme" enableSystem defaultTheme="system"
-          value={{ light: 'light', dark: 'dark' }} >
+        <Providers>
           {children}
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
