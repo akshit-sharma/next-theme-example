@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" enableSystem defaultTheme="system"
-          value={{ light: 'theme-light', dark: 'theme-dark' }} >
+      <body className="bg-white dark:bg-black min-h-dvh">
+        <ThemeProvider attribute="data-theme" enableSystem defaultTheme="system"
+          value={{ light: 'light', dark: 'dark' }} >
           {children}
         </ThemeProvider>
       </body>
